@@ -1,0 +1,44 @@
+.todoItem {
+    display: grid;
+    grid-template-columns: 24px auto 16px 16px;
+    grid-template-areas:
+        ". . . ."
+        "created created created created";
+    font-size: 1.2rem;
+    gap: 16px;
+    padding: 16px;
+    align-items: center;
+}
+
+.todoItemDone {
+    opacity: .5;
+    position: relative;
+}
+
+.todoItem:not(.todoItemDone):hover .action {
+    opacity: 1;
+}
+
+.todoItem:hover .action:not(.edit) {
+    opacity: 1;
+}
+
+.todoItem:not(.todoItemDone):hover {
+    background: #d5c3c3;
+    border-radius: 8px;
+}
+
+.action {
+    transition: .3s ease-in-out;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.created {
+    grid-area: created;
+    font-size: .8rem;
+}
+
+.todoItemEdit:not(.todoItemDone) .action {
+    opacity: 1;
+}
